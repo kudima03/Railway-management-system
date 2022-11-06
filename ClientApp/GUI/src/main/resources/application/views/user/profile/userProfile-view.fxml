@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="700.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.user.profile.UserProfileController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="443.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <VBox alignment="CENTER_LEFT">
+               <children>
+                  <Label stylesheets="@../../../styles/styles.css" text="Username">
+                     <styleClass>
+                        <String fx:value="font-style" />
+                        <String fx:value="font-size-19px" />
+                     </styleClass>
+                  </Label>
+                  <Label onMouseClicked="#onEditProfileClicked" stylesheets="@../../../styles/styles.css" text="Редактировать профиль">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="font-size-17px" />
+                        <String fx:value="font-style" />
+                        <String fx:value="hover-style-text" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox onMouseClicked="#onOrdersClicked" prefHeight="65.0" prefWidth="443.0" styleClass="profile-menu-item" stylesheets="@../../../styles/styles.css">
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+               <children>
+                  <Label styleClass="font-size-19px" stylesheets="@../../../styles/styles.css" text="Заказы" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="65.0" prefWidth="570.0">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../styles/icons/right-arrow.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" onMouseClicked="#onPassengerClicked" prefHeight="66.0" prefWidth="427.0" styleClass="profile-menu-item" stylesheets="@../../../styles/styles.css">
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+               <children>
+                  <Label styleClass="font-size-19px" stylesheets="@../../../styles/styles.css" text="Пассажиры" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="66.0" prefWidth="533.0">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../styles/icons/right-arrow.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" onMouseClicked="#onEditProfileClicked" prefHeight="65.0" prefWidth="443.0" />
+   </children>
+</VBox>

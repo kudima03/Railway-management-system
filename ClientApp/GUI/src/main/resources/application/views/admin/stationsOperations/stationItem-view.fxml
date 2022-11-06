@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="522.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.admin.stationsOperationsControllers.StationItemController">
+   <children>
+      <VBox prefHeight="51.0" prefWidth="25.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css" />
+      <VBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="432.0" styleClass="white-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <HBox>
+               <children>
+                  <Label text="Название станции:" />
+                  <Label fx:id="stationNameLabel" text="Смолевичи">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></Label>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label text="Адрес:" />
+                  <Label fx:id="stationAddressLabel" text="г.Смолевичи, Минская область, Беларусь">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../styles/icons/edit.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../styles/icons/delete.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</HBox>

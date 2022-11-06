@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="455.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.driver.DriverMenuController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="455.0" prefWidth="200.0" spacing="20.0" styleClass="light-blue-background" stylesheets="@../../styles/styles.css">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#onMyTimeTableClick" stylesheets="@../../styles/styles.css" text="Моё расписание">
+               <styleClass>
+                  <String fx:value="menu-button" />
+                  <String fx:value="font-size-19px" />
+                  <String fx:value="font-style" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onMouseClicked="#onMyProfileClick" stylesheets="@../../styles/styles.css" text="Мой профиль">
+               <styleClass>
+                  <String fx:value="menu-button" />
+                  <String fx:value="font-size-19px" />
+                  <String fx:value="font-style" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onMouseClicked="#onExitClick" stylesheets="@../../styles/styles.css" text="Выйти">
+               <styleClass>
+                  <String fx:value="menu-button" />
+                  <String fx:value="font-size-19px" />
+                  <String fx:value="font-style" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </VBox>
+      <VBox fx:id="outputVBox" layoutX="200.0" prefHeight="455.0" prefWidth="500.0" styleClass="white-background" stylesheets="@../../styles/styles.css" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="684.0" spacing="70.0" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.user.routes.RouteInfoItemController">
+   <children>
+      <Label fx:id="stationNameLabel" styleClass="font-size-15px" stylesheets="@../../../styles/styles.css" text="Смолевичи">
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="arrivalTimeLabel" styleClass="font-size-15px" stylesheets="@../../../styles/styles.css" text="12.39">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="stopTimeLabel" styleClass="font-size-15px" stylesheets="@../../../styles/styles.css" text="1 мин">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="departureTimeLabel" styleClass="font-size-15px" stylesheets="@../../../styles/styles.css" text="12.40">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="routeTimeLabel" styleClass="font-size-15px" stylesheets="@../../../styles/styles.css" text="49 мин">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+   </children>
+   <styleClass>
+      <String fx:value="white-background" />
+      <String fx:value="border-rule" />
+   </styleClass>
+</HBox>
