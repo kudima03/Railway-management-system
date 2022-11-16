@@ -12,4 +12,9 @@
     <name>Archetype - ClientApp</name>
     <url>http://maven.apache.org</url>
     <packaging>pom</packaging>
+    <modules>
+        <module>ClientConnectionModule</module>
+        <module>GUI</module>
+    </modules>
+
 </project>
