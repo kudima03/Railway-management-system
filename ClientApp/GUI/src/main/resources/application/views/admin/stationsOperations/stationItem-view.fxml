@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="522.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.admin.stationsOperationsControllers.StationItemController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="522.0" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.admin.stationsOperationsControllers.StationItemController">
    <children>
       <VBox prefHeight="51.0" prefWidth="25.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css" />
       <VBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="432.0" styleClass="white-background" stylesheets="@../../../styles/styles.css">
@@ -53,4 +54,8 @@
          </children>
       </VBox>
    </children>
+   <styleClass>
+      <String fx:value="white-background" />
+      <String fx:value="border-rule-5px" />
+   </styleClass>
 </HBox>

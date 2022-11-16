@@ -98,15 +98,18 @@ public class RegistrationController {
 
     public void onLoginInputKeyTyped(KeyEvent keyEvent) {
 
-        if (!InputValidation.isLoginCorrect(loginInput.getText())) return;
+        if (!InputValidation.isLoginCorrect(loginInput.getText())){
+            loginInput.setStyle("");
+            return;
+        }
         try {
            if(access.checkIfLoginExists(loginInput.getText())){
-               //TODO: Do smth when login exists
+               loginInput.setStyle("-fx-border-color: #ff0000");
            } else {
-               //TODO: Do smth when login not exists
+               loginInput.setStyle("-fx-border-color: #2cc42c");
            }
         } catch (Exception e) {
-            //Exception ignore
+           AlertManager.showErrorAlert("Ошибка подключения", "");
         }
     }
 }

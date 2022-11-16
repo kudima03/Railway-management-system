@@ -1,5 +1,6 @@
 package application.controllers.user.passengers;
 
+import application.AlertManager;
 import application.Application;
 import clientConnectionModule.interfaces.UserAccess;
 import databaseEntities.Classes.Passenger;
@@ -32,7 +33,18 @@ public class PassengerInfoItemDeletableController {
     @FXML
     void onDeleteClick(MouseEvent event) {
 
-        //TODO: make delete
+        try {
+            switch (access.deletePassenger(passenger.getId())) {
+                case ERROR -> {
+                    AlertManager.showWarningAlert("Невозможно удалить пассажира", "На пассажира оформлены билеты");
+                    return;
+                }
+            }
+            parentMenu.getKey().loadData();
+
+        } catch (Exception e) {
+            AlertManager.showErrorAlert("Ошибка подключения", "");
+        }
     }
 
     @FXML

@@ -49,8 +49,9 @@ public class InputValidation {
 
     public static boolean isCardOwnerCorrect(String cardOwner){
 
-        String regex = "[a-zA-Z]+";
-        return cardOwner.matches(regex);
+        String[] arr =  cardOwner.split(" ");
+        if (arr.length != 2) return false;
+        return isStringContainsOnlyLetters(arr[0]) && isStringContainsOnlyLetters(arr[1]);
     }
 
     public static boolean isEmailCorrect(final char[] input) {
@@ -222,12 +223,13 @@ public class InputValidation {
     }
 
     public static boolean isStringContainsOnlyLetters(String str){
-        String regex = "[a-zA-Z]+";
-        return str.matches(regex);
+        String regexLatin = "[a-zA-Z]+";
+        String regexCyrillic = "[а-яА-Я]+";
+        return str.matches(regexLatin) || str.matches(regexCyrillic);
     }
 
     public static boolean isPhoneNumber(String phoneNumber){
-        String regex = "^\\\\s?((\\\\+[1-9]{1,4}[ \\\\-]*)|(\\\\([0-9]{2,3}\\\\)[ \\\\-]*)|([0-9]{2,4})[ \\\\-]*)*?[0-9]{3,4}?[ \\\\-]*[0-9]{3,4}?\\\\s?";
+        String regex = "^\\s?((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?\\s?";
         return phoneNumber.matches(regex);
     }
 

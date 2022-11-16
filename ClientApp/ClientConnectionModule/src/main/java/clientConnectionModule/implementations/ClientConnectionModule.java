@@ -21,9 +21,8 @@ import java.util.List;
 public class ClientConnectionModule implements AdminAccess, UserAccess, DriverAccess, RegistrationAccess, SingUpAccess {
 
     private Socket connectionSocket;
-    private String serverIp;
-    private int serverPort;
-
+    private final String serverIp;
+    private final int serverPort;
     private ObjectOutputStream objectOutputStream;
     private ObjectInputStream objectInputStream;
 
@@ -36,8 +35,6 @@ public class ClientConnectionModule implements AdminAccess, UserAccess, DriverAc
     public boolean connectToServer() throws IOException {
 
         connectionSocket = new Socket(serverIp, serverPort);
-        //Вот здесь мы ставим тайм-аут ожидания 3 сек
-        //Если серв не отвечает более чем 3 сек мы отключаемся
         //connectionSocket.setSoTimeout(3000);
         if (!connectionSocket.isConnected()) return false;
         objectOutputStream = new ObjectOutputStream(connectionSocket.getOutputStream());

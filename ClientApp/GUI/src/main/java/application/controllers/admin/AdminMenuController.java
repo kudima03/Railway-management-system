@@ -36,7 +36,6 @@ public class AdminMenuController {
     @FXML
     void onReportsClicked(MouseEvent event) {
 
-        /*AlertManager.showWarningAlert("В разработке", "Терпение, только терпение");*/
         try {
             PDFManager.createRoutesPopularityReport(access);
         } catch (Exception e) {

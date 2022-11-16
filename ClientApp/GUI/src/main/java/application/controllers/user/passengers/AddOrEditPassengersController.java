@@ -17,6 +17,7 @@ import javafx.util.Pair;
 import javafx.util.StringConverter;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
@@ -95,7 +96,6 @@ public class AddOrEditPassengersController {
         } else if (prevMenu1 != null) {
             outputAnchorPane.getChildren().add(prevMenu1.getValue());
         }
-
     }
 
     @FXML
@@ -109,7 +109,12 @@ public class AddOrEditPassengersController {
             sex = Sex.Man;
         if (femaleRadioButton.isSelected())
             sex = Sex.Woman;
-        var dateOfBirth = Date.from(Instant.from(dateOfBirthPicker.getValue().atStartOfDay(ZoneId.systemDefault())));
+        var date = dateOfBirthPicker.getValue();
+        if (date == null){
+            AlertManager.showWarningAlert("Введите дату рождения!", "");
+            return;
+        }
+        var dateOfBirth = Date.from(Instant.from(date.atStartOfDay(ZoneId.systemDefault())));
         var documentType = documentTypesComboBox.getSelectionModel().getSelectedItem();
         var documentNumber = documentNumberInput.getText();
         var phoneNumber = phoneNumberInput.getText();
@@ -123,7 +128,7 @@ public class AddOrEditPassengersController {
             return;
         }
         if (!InputValidation.isStringContainsOnlyLetters(patronymic)) {
-            AlertManager.showWarningAlert("Ошибка ввода", "Неверный формат ввода фамилии");
+            AlertManager.showWarningAlert("Ошибка ввода", "Неверный формат ввода отчества");
             return;
         }
         if (!InputValidation.isPhoneNumber(phoneNumber)) {
@@ -136,8 +141,15 @@ public class AddOrEditPassengersController {
         }
         try {
             if (!isEdit) {
-                access.createPassenger(new Passenger(name, surname, patronymic,
+                var response = access.createPassenger(new Passenger(name, surname, patronymic,
                         phoneNumber, documentType, documentNumber, email, dateOfBirth, sex));
+                switch (response){
+
+                    case ERROR -> {
+                        AlertManager.showWarningAlert("Ошибка", "Ошибка добавления");
+                        return;
+                    }
+                }
             } else {
                 passenger.setName(name);
                 passenger.setSurname(surname);
@@ -148,7 +160,22 @@ public class AddOrEditPassengersController {
                 passenger.setDateOfBirth(dateOfBirth);
                 passenger.setEmail(email);
                 passenger.setSex(sex);
-                access.updatePassenger(passenger);
+                var response = access.updatePassenger(passenger);
+                switch (response){
+
+                    case ERROR -> {
+                        AlertManager.showWarningAlert("Ошибка", "Ошибка обновления");
+                        return;
+                    }
+                }
+            }
+            outputAnchorPane.getChildren().clear();
+            if (prevMenu != null) {
+                outputAnchorPane.getChildren().add(prevMenu.getValue());
+                prevMenu.getKey().loadData();
+            } else if (prevMenu1 != null) {
+                outputAnchorPane.getChildren().add(prevMenu1.getValue());
+                prevMenu1.getKey().loadData();
             }
         } catch (Exception e) {
             AlertManager.showErrorAlert("Ошибка подключения", "");
@@ -192,6 +219,8 @@ public class AddOrEditPassengersController {
         nameInput.setText(passengerToEdit.getName());
         patronymicInput.setText(passengerToEdit.getPatronymic());
         emailInput.setText(passengerToEdit.getEmail());
+        var date = passengerToEdit.getDateOfBirth();
+        dateOfBirthPicker.setValue(LocalDate.of(date.getYear() + 1900, date.getMonth() + 1, date.getDate()));
         switch (passengerToEdit.getSex()) {
             case Man -> {
                 maleRadioButton.setSelected(true);

@@ -11,7 +11,6 @@ public class Driver implements Serializable {
     private String patronymic;
     private Date dateOfBirth;
     private int experience;
-    private byte[] binaryPhoto;
     private User user;
 
     public Driver() {
@@ -20,17 +19,15 @@ public class Driver implements Serializable {
         surname = "";
         patronymic = "";
         dateOfBirth = new Date(100, 0, 1);
-        binaryPhoto = new byte[0];
         user = new User();
     }
 
-    public Driver(String name, String surname, String patronymic, Date dateOfBirth, int experience, byte[] binaryPhoto, User user) {
+    public Driver(String name, String surname, String patronymic, Date dateOfBirth, int experience, User user) {
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
         this.dateOfBirth = dateOfBirth;
         this.experience = experience;
-        this.binaryPhoto = binaryPhoto;
         this.user = user;
     }
 
@@ -76,14 +73,6 @@ public class Driver implements Serializable {
 
     public void setExperience(int experience) {
         this.experience = experience;
-    }
-
-    public byte[] getBinaryPhoto() {
-        return binaryPhoto;
-    }
-
-    public void setBinaryPhoto(byte[] binaryPhoto) {
-        this.binaryPhoto = binaryPhoto;
     }
 
     public int getId() {
