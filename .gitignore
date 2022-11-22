@@ -5,7 +5,7 @@ cmake-build-*/
 *.iws
 
 # IntelliJ
-!**/src/main/**/out/
+.out/
 .idea/
 *.iml
 

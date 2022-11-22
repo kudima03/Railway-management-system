@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="700.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.user.ticketSearch.TimeTableController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="700.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.user.ticketSearch.TimeTableController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="590.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css">
          <children>
@@ -31,9 +31,9 @@
             </ImageView>
          </children>
       </HBox>
-      <ScrollPane prefHeight="425.0" prefWidth="700.0" styleClass="white-background" stylesheets="@../../../styles/styles.css">
+      <ScrollPane prefHeight="678.0" prefWidth="700.0" styleClass="white-background" stylesheets="@../../../styles/styles.css">
          <content>
-            <VBox fx:id="outputVBox" prefHeight="425.0" prefWidth="684.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" />
+            <VBox fx:id="outputVBox" prefHeight="674.0" prefWidth="684.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" />
          </content>
       </ScrollPane>
    </children>

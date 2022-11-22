@@ -83,6 +83,7 @@ public class TimeTableController {
                 pair.getValue().setPadding(new Insets(0, 0, 3, 0));
                 outputVBox.getChildren().add(pair.getValue());
             }
+            routeNameLabel.setText(firstRouteStation.getName() + "-" + lastRouteStation.getName());
         } catch (Exception e) {
             AlertManager.showErrorAlert("Ошибка получения данных", "");
         }
