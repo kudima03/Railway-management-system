@@ -6,9 +6,13 @@ REQUIREMENTS
 INSTALLATION
 ------------
 -Copy your jdbc connection string, database name and credentials to Server->DataLayer->resources->config.properties.
+
 -Start server (During startup server creates schema `railway_database` if it's not exists)
+
 -Perform such statement in your MySQL manager:
+
 insert into railway_database.users (login, password, `e-mail`, userType) values ('admin', 'admin', 'yourEmail@example.com', 1);
+
 -Now you can run client application and authorize as admin or register as user
 
 SOME SCREENSHOTS
