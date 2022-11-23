@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.admin.statisticsOperationsControllers.StatisticsController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="38.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <Label stylesheets="@../../../styles/styles.css" text="Статистика">
+               <styleClass>
+                  <String fx:value="font-size-19px" />
+                  <String fx:value="font-style" />
+               </styleClass>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" onMouseClicked="#onAmountOfSoldTicketsReportClicked" prefHeight="60.0" styleClass="transparent" stylesheets="@../../../styles/styles.css">
+         <children>
+            <Label text="Отчет о количестве проданных билетов">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" onMouseClicked="#onStationsWorkloadReportClicked" prefHeight="60.0">
+         <children>
+            <Label text="Отчет о нагруженности станций">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" onMouseClicked="#onTrainTypesNumericalRatioPieChartClicked" prefHeight="60.0">
+         <children>
+            <Label text="Диаграмма количественного соотношения типов поездов">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" onMouseClicked="#onForeignPassengersNumericalRatioPieChartClicked" prefHeight="60.0">
+         <children>
+            <Label text="Диаграмма количественного соотношения иностранных пассажиров">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</VBox>

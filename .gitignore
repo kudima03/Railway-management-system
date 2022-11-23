@@ -1,18 +1,15 @@
-target/
-out/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
+*/target/**
 # CMake
 cmake-build-*/
 
 # File-based project format
 *.iws
 
-### IntelliJ IDEA ###
+# IntelliJ
+out/
+.idea/
 *.iml
-*.ipr
+*.pdf
 
 ### Java ###
 # Compiled class file
@@ -32,3 +29,4 @@ cmake-build-*/
 *.zip
 *.tar.gz
 *.rar
+

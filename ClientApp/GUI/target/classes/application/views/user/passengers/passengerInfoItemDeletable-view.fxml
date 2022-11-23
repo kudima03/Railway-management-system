@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="684.0" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.user.passengers.PassengerInfoItemDeletableController">
+   <children>
+      <VBox prefHeight="62.0" prefWidth="7.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css" />
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onPassengerItemClicked" prefHeight="62.0" prefWidth="588.0">
+         <children>
+            <HBox prefHeight="24.0" prefWidth="410.0">
+               <children>
+                  <Label fx:id="fullNameLabel" prefHeight="18.0" prefWidth="483.0" styleClass="bold" stylesheets="@../../../styles/styles.css" text="Курочкин Дмитрий Андреевич">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin></Label>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="238.0" />
+               </children>
+            </HBox>
+            <Label fx:id="documentNumberLabel" text="МС 2839799" />
+            <Label fx:id="phoneNumberLabel" text="+375336653907" />
+         </children>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="62.0" prefWidth="77.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <ImageView fitHeight="20.0" fitWidth="20.0" onMouseClicked="#onDeleteClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../styles/icons/delete.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+   <styleClass>
+      <String fx:value="white-background" />
+      <String fx:value="item-hover-passenger" />
+      <String fx:value="add-border" />
+   </styleClass>
+   <padding>
+      <Insets top="5.0" />
+   </padding>
+</HBox>

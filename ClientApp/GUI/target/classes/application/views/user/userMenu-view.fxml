@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="720.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.user.UserMenuController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="720.0" prefWidth="220.0" styleClass="light-blue-background" stylesheets="@../../styles/styles.css">
+         <children>
+            <VBox alignment="CENTER" stylesheets="@../../styles/styles.css">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#onFindLabelClicked" stylesheets="@../../styles/styles.css" text="Поиск">
+                     <styleClass>
+                        <String fx:value="menu-element" />
+                        <String fx:value="menu-button" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" stylesheets="@../../styles/styles.css">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#onOrderLabelClicked" stylesheets="@../../styles/styles.css" text="Заказы">
+                     <styleClass>
+                        <String fx:value="menu-button" />
+                        <String fx:value="menu-element" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" stylesheets="@../../styles/styles.css">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#onProfileLabelClicked" stylesheets="@../../styles/styles.css" text="Профиль">
+                     <styleClass>
+                        <String fx:value="menu-element" />
+                        <String fx:value="menu-button" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" stylesheets="@../../styles/styles.css">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#onRulesLabelClicked" stylesheets="@../../styles/styles.css" text="Правила">
+                     <styleClass>
+                        <String fx:value="menu-button" />
+                        <String fx:value="menu-element" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" stylesheets="@../../styles/styles.css">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#onExitLabelClicked" stylesheets="@../../styles/styles.css" text="Выйти">
+                     <styleClass>
+                        <String fx:value="menu-button" />
+                        <String fx:value="menu-element" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox fx:id="outputVBox" alignment="TOP_CENTER" layoutX="219.0" prefHeight="720.0" prefWidth="700.0" styleClass="white-background" stylesheets="@../../styles/styles.css" />
+   </children>
+</AnchorPane>

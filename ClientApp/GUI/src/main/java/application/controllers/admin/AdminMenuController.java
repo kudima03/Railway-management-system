@@ -2,10 +2,10 @@ package application.controllers.admin;
 
 import application.AlertManager;
 import application.Application;
-import application.PDFManager;
 import application.controllers.admin.driversOperationsControllers.DriversController;
 import application.controllers.admin.routesOperationsControllers.RoutesController;
 import application.controllers.admin.stationsOperationsControllers.StationsController;
+import application.controllers.admin.statisticsOperationsControllers.StatisticsController;
 import application.controllers.admin.trainsOperationsControllers.TrainsController;
 import application.controllers.common.AuthorizationController;
 import clientConnectionModule.interfaces.AdminAccess;
@@ -36,11 +36,11 @@ public class AdminMenuController {
     @FXML
     void onReportsClicked(MouseEvent event) {
 
-        try {
-            PDFManager.createRoutesPopularityReport(access);
-        } catch (Exception e) {
-            AlertManager.showErrorAlert("Ошибка подключения", "");
-        }
+        Pair<StatisticsController, VBox> pair = Application.viewLoader.getItem(Application.viewLoader.statisticsView);
+        pair.getKey().setAccess(access);
+        pair.getKey().setOutputNode(output);
+        output.getChildren().clear();
+        output.getChildren().add(pair.getValue());
     }
 
     @FXML

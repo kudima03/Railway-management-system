@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="486.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.admin.stationsOperationsControllers.StationsAddOrEditController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="46.0" prefWidth="486.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <Label fx:id="title" stylesheets="@../../../styles/styles.css" text="Добавление станции">
+               <styleClass>
+                  <String fx:value="font-size-19px" />
+                  <String fx:value="font-style" />
+               </styleClass></Label>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <VBox prefHeight="437.0" prefWidth="486.0" spacing="15.0" styleClass="white-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <TextField fx:id="stationNameInput" maxWidth="250.0" prefHeight="26.0" prefWidth="250.0" promptText="Введите название станции:" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <TextField fx:id="stationAddressInput" maxWidth="250.0" prefHeight="26.0" prefWidth="250.0" promptText="Введите адрес станции:" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <TextField fx:id="kmFromMinskInput" maxWidth="250.0" prefHeight="26.0" prefWidth="250.0" promptText="Введите кол-во километров от Минска" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#onConfirmButtonClick" prefHeight="46.0" prefWidth="193.0" styleClass="findbutton" stylesheets="@../../../styles/styles.css" text="Подтвердить">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>

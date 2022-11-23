@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.user.orders.OrderItemController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onItemClicked" prefHeight="132.0" prefWidth="684.0" styleClass="white-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <VBox prefHeight="62.0" prefWidth="431.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="37.0" prefWidth="431.0" stylesheets="@../../../styles/styles.css">
+                     <children>
+                        <Label fx:id="startStationLabel" styleClass="font-style" stylesheets="@../../../styles/styles.css" text="Смолевичи">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </Label>
+                        <Label styleClass="font-style" stylesheets="@../../../styles/styles.css" text="    -     " />
+                        <Label fx:id="endStationLabel" styleClass="font-style" stylesheets="@../../../styles/styles.css" text="Минск-Восточный" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="light-blue-background" />
+                        <String fx:value="font-size-15px" />
+                     </styleClass>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../styles/icons/train.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="trainNumber" text="6015">
+                           <HBox.margin>
+                              <Insets left="2.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="trainTypeName" text="Региональные линии эконом класса">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="431.0">
+               <children>
+                  <Label alignment="CENTER" text="Отправление:" />
+                  <Label fx:id="departureDateTime" text="21 окт. в 13.17">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="statusHBox" alignment="CENTER" prefHeight="39.0" prefWidth="431.0" styleClass="orange-background" stylesheets="@../../../styles/styles.css">
+               <children>
+                  <Label fx:id="statusLabel" stylesheets="@../../../styles/styles.css" text="Не оплачен">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="font-size-15px" />
+                        <String fx:value="font-style" />
+                     </styleClass>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="7.0" top="7.0" />
+   </padding>
+   <styleClass>
+      <String fx:value="white-background" />
+      <String fx:value="item-hover-passenger" />
+   </styleClass>
+</VBox>

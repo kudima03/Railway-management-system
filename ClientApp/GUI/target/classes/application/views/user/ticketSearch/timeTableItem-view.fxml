@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefWidth="684.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.user.ticketSearch.TimeTableItemController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="130.0" prefWidth="602.0" styleClass="border-solid" stylesheets="@../../../styles/styles.css">
+         <children>
+            <FlowPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="600.0">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="600.0">
+                     <children>
+                        <HBox prefHeight="126.0" prefWidth="200.0">
+                           <children>
+                              <VBox minHeight="-Infinity" prefHeight="10.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="154.0">
+                                       <children>
+                                          <Label fx:id="departureTimeLabel" alignment="CENTER" prefHeight="18.0" prefWidth="119.0" text="16:20">
+                                             <HBox.margin>
+                                                <Insets bottom="2.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets bottom="10.0" />
+                                       </opaqueInsets>
+                                    </HBox>
+                                    <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="154.0">
+                                       <children>
+                                          <Label fx:id="departureStationNameLabel" alignment="CENTER" text="Минск">
+                                             <HBox.margin>
+                                                <Insets top="2.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="60.0" prefWidth="200.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="49.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="travelTimeLabel" text="49 мин">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="130.0" prefWidth="200.0">
+                           <children>
+                              <HBox alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="154.0">
+                                 <children>
+                                    <Label fx:id="arrivalTimeLabel" alignment="CENTER" prefHeight="18.0" prefWidth="119.0" text="17.00">
+                                       <HBox.margin>
+                                          <Insets bottom="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets bottom="10.0" />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="154.0">
+                                 <children>
+                                    <Label fx:id="arrivalStationNameLabel" alignment="CENTER" text="Смолевичи">
+                                       <HBox.margin>
+                                          <Insets top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </FlowPane>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../../../styles/icons/train.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="routeNumberLabel" alignment="BOTTOM_LEFT" prefHeight="18.0" prefWidth="50.0" text="7012">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="routeStartStationLabel" alignment="CENTER" prefHeight="26.0" text="Орша">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label text="-">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="routeEndStationLabel" prefHeight="26.0" text="Минск-Пассажирский">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="routeLabel" onMouseClicked="#onRouteLabelClicked" text="Маршрут">
+                           <HBox.margin>
+                              <Insets left="100.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css">
+                     <children>
+                        <Label fx:id="trainTypeLabel" alignment="CENTER" stylesheets="@../../../styles/styles.css" text="Региональные линии эконом класса">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <styleClass>
+                              <String fx:value="font-size-19px" />
+                              <String fx:value="font-style" />
+                           </styleClass>
+                        </Label>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="34.0">
+                           <children>
+                              <Label fx:id="buyTicketLabel" alignment="CENTER_RIGHT" onMouseClicked="#onBuyTicketLabelClicked" prefWidth="260.0" stylesheets="@../../../styles/styles.css" text="1,19">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                                 <styleClass>
+                                    <String fx:value="font-size-19px" />
+                                    <String fx:value="font-style" />
+                                 </styleClass>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

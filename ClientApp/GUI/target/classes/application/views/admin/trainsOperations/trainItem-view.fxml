@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="520.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.admin.trainsOperationsControllers.TrainItemController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="15.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css" />
+      <VBox alignment="CENTER" prefHeight="74.0" prefWidth="410.0">
+         <children>
+            <HBox>
+               <children>
+                  <Label text="Номер поезда:" />
+                  <Label fx:id="trainNumberLabel" text="589553">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label prefHeight="18.0" prefWidth="72.0" text="Тип поезда:" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../../styles/icons/train.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="trainTypeNameLabel" text="Региональные линии эконом класса" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="74.0" prefWidth="84.0" spacing="10.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <ImageView fitHeight="20.0" fitWidth="20.0" onMouseClicked="#onEditClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../styles/icons/edit.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" onMouseClicked="#onDeleteClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../styles/icons/delete.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</HBox>

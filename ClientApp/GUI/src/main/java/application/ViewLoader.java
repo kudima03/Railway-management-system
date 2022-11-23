@@ -42,6 +42,9 @@ public class ViewLoader {
     public final String routesView = "admin/routesOperations/routes-view.fxml";
     public final String routesAddOrEditView = "admin/routesOperations/routesAddOrEdit-view.fxml";
     public final String routeStationItemView = "admin/routesOperations/routeStationItem-view.fxml";
+    public final String statisticsView = "admin/statisticsOperations/statistics-view.fxml";
+    public final String trainTypesNumericalRatioReportView = "admin/statisticsOperations/trainTypesNumericalRatioReport-view.fxml";
+    public final String foreignPassengersNumericalRatioPieChartView = "admin/statisticsOperations/foreignPassengersNumericalRatioPieChart-view.fxml";
     public final String driverMenuView = "driver/driverMenu-view.fxml";
     public final String driverTimeTableView = "driver/timeTable/timeTable-view.fxml";
     public final String driverTimeTableItemView = "driver/timeTable/timeTableItem-view.fxml";

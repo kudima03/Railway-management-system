@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="522.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.admin.driversOperationsControllers.DriverItemController">
+   <children>
+      <VBox prefWidth="55.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css" />
+      <VBox prefHeight="100.0" prefWidth="360.0" styleClass="white-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <Label fx:id="fullNameLabel" text="Курочкин Дмитрий Андреевич">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="dateOfBirthLabel" text="02.02.2003">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Label>
+            <HBox>
+               <children>
+                  <Label text="Опыт работы: " />
+                  <Label fx:id="experienceLabel" text="5 лет" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </VBox>
+      <ImageView fx:id="photoView" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin></ImageView>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#onEditClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../styles/icons/edit.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#onDeleteClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../styles/icons/delete.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</HBox>

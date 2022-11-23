@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="540.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.admin.trainsOperationsControllers.TrainsController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="47.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <Label alignment="CENTER" stylesheets="@../../../styles/styles.css" text="Поезда">
+               <styleClass>
+                  <String fx:value="font-size-19px" />
+                  <String fx:value="font-style" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="33.0" prefWidth="462.0">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#onAddClick" stylesheets="@../../../styles/styles.css" text="Добавить поезд">
+               <styleClass>
+                  <String fx:value="transparent" />
+                  <String fx:value="font-size-15px" />
+                  <String fx:value="add-passenger" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <ScrollPane prefHeight="510.0" prefWidth="540.0">
+         <content>
+            <VBox fx:id="trainsVBox" prefHeight="510.0" prefWidth="522.0" spacing="5.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" />
+         </content>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </ScrollPane>
+   </children>
+</VBox>

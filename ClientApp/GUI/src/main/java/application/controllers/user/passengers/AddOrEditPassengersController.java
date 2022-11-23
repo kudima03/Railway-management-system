@@ -20,6 +20,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 
 public class AddOrEditPassengersController {
 
@@ -72,6 +73,8 @@ public class AddOrEditPassengersController {
 
     private AutoCompleteComboBoxListener<DocumentType> listener;
 
+    private List<DocumentType> documentTypes;
+
     public void initialize() {
 
         comboBoxConverter = new StringConverter<DocumentType>() {
@@ -82,7 +85,10 @@ public class AddOrEditPassengersController {
 
             @Override
             public DocumentType fromString(String s) {
-                return new DocumentType(s);
+                var matches =
+                        documentTypes.stream().filter((var type) -> type.getTypeName().equals(s)).toList();
+                if (matches.size() != 1) return null;
+                return matches.get(0);
             }
         };
     }
@@ -186,7 +192,7 @@ public class AddOrEditPassengersController {
     public void loadData() {
 
         try {
-            var documentTypes = access.getAllDocumentTypes();
+            documentTypes = access.getAllDocumentTypes();
             documentTypesComboBox.setItems(FXCollections.observableArrayList(documentTypes));
             documentTypesComboBox.setConverter(comboBoxConverter);
             documentTypesComboBox.getSelectionModel().selectFirst();
@@ -229,7 +235,7 @@ public class AddOrEditPassengersController {
                 femaleRadioButton.setSelected(true);
             }
         }
-        documentTypesComboBox.setValue(passengerToEdit.getDocumentType());
+        documentTypesComboBox.getSelectionModel().select(passengerToEdit.getDocumentType());
         documentNumberInput.setText(passengerToEdit.getDocumentNumber());
         phoneNumberInput.setText(passengerToEdit.getPhoneNumber());
 

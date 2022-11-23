@@ -163,4 +163,63 @@ public class PDFManager {
 
     }
 
+    public static void createStationsWorkloadReport(AdminAccess access) throws Exception{
+
+        Date date = new Date();
+        var dateStr = date.getDate() + "." + (date.getMonth() + 1) + "." + (date.getYear() + 1900);
+        String filePath = reportsFolder + "Отчет о загруженности станций на " + dateStr + ".pdf";
+        Document document = new Document(PageSize.A4);
+        PdfWriter pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(filePath));
+        BaseFont baseFont = BaseFont.createFont(Objects.requireNonNull(Application.class.getResource(
+                        "/application/styles/fonts/ChampagneAndLimousinesBoldItalic-dqex.ttf")).toString(),
+                BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+
+
+        var title = new Paragraph("Отчет о загруженности станций", new Font(baseFont, 18));
+        title.setAlignment(Element.ALIGN_CENTER);
+
+        float columnWidth = 520F;
+        float[] columns = {columnWidth, columnWidth};
+
+        PdfPTable table = new PdfPTable(columns);
+        table.setSpacingBefore(40F);
+        table.setHorizontalAlignment(Element.ALIGN_CENTER);
+
+        var nameText = new Paragraph("Название станции", new Font(baseFont, 14));
+        nameText.setAlignment(Element.ALIGN_CENTER);
+        var routeNameColumnCell = new PdfPCell(nameText);
+
+        var amountText = new Paragraph("Количество принятых пассажиров", new Font(baseFont, 14));
+        amountText.setAlignment(Element.ALIGN_CENTER);
+        var amountOfTicketsColumnCell = new PdfPCell(amountText);
+
+        table.addCell(routeNameColumnCell);
+        table.addCell(amountOfTicketsColumnCell);
+
+        var stations = access.getAllStationsAdmin();
+        var tickets = access.getAllTicketsAdmin();
+        for (var station : stations) {
+
+            table.addCell(new Paragraph(station.getName(), new Font(baseFont, 14)));
+
+            long amount = tickets.stream().filter((var ticket)->
+                    ticket.getArrivalStation().getId() == station.getId() || ticket.getDepartureStation().getId() == station.getId()).count();
+            table.addCell(String.valueOf(amount));
+        }
+
+        document.open();
+
+        document.add(title);
+        document.add(table);
+
+        document.close();
+        pdfWriter.close();
+
+        try {
+            Desktop.getDesktop().open(new File(filePath));
+        } catch (IOException ex) {
+            AlertManager.showErrorAlert("Нет приложения для просмотра pdf", "");
+        }
+    }
+
 }

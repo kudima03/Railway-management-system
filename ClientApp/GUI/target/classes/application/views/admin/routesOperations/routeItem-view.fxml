@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onItemClicked" prefWidth="514.0" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.admin.routesOperationsControllers.RouteItemController">
+   <children>
+      <HBox prefHeight="53.0" prefWidth="602.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="45.0" prefWidth="268.0">
+               <children>
+                  <Label fx:id="departureTimeLabel" text="5.30" />
+                  <Label fx:id="departureStationNameLabel" text="Орша-Южное" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="45.0" prefWidth="37.0">
+               <children>
+                  <Label text="----" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="45.0" prefWidth="314.0">
+               <children>
+                  <Label fx:id="arrivalTimeLabel" text="11.40" />
+                  <Label fx:id="arrivalStationNameLabel" text="Минск-Пассажирский" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="602.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="106.0">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../../styles/icons/train.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="routeNumberLabel" styleClass="font-style" stylesheets="@../../../styles/styles.css" text="6001" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="230.0">
+               <children>
+                  <Label fx:id="trainTypeLabel" alignment="CENTER" prefHeight="18.0" prefWidth="220.0" styleClass="font-style" stylesheets="@../../../styles/styles.css" text="Региональные линии эконом класса">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="179.0">
+               <children>
+                  <Label styleClass="font-style" stylesheets="@../../../styles/styles.css" text="Номер поезда: " />
+                  <Label fx:id="trainNumberLabel" prefHeight="18.0" prefWidth="63.0" styleClass="font-style" stylesheets="@../../../styles/styles.css" text="608595">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="56.0" prefWidth="602.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="56.0" prefWidth="303.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label text="Машинист: " />
+                        <Label fx:id="driverFullNameLabel" text="Ошмянов Петр Юрьевич" />
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label text="Дата рождения:  " />
+                        <Label fx:id="driverDateOfBirthLabel" text="02.02.2003" />
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label text="Опыт: " />
+                        <Label fx:id="driverExperienceLabel" text="15 лет" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="20.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <styleClass>
+      <String fx:value="white-background" />
+      <String fx:value="border-rule-5px" />
+      <String fx:value="border-radius-10px" />
+   </styleClass>
+</VBox>

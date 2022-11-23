@@ -150,6 +150,8 @@ public class ClientProcessingThread extends Thread {
         RouteStationsManager routeStationsManager = new RouteStationsManager();
         UsersManager usersManager = new UsersManager();
         TicketsManager ticketsManager = new TicketsManager();
+        PassengersManager passengersManager = new PassengersManager();
+        DocumentTypesManager documentTypesManager = new DocumentTypesManager();
         while (true) {
 
             AdminCommand command = receiveObject();
@@ -362,14 +364,38 @@ public class ClientProcessingThread extends Thread {
                     int routeId = receiveObject();
                     try {
 
-                        int count = ticketsManager.get((var ticket)->
+                        int count = ticketsManager.get((var ticket) ->
                                 ticket.getRoute().getId() == routeId
-                                && (new Date().getTime() - ticket.getClearanceTime().getTime()) / (24 * 60 * 60 * 1000) <= 30
-                                && ticket.getPurchaseStatus() == PurchaseStatus.Paid
+                                        && (new Date().getTime() - ticket.getClearanceTime().getTime()) / (24 * 60 * 60 * 1000) <= 30
+                                        && ticket.getPurchaseStatus() == PurchaseStatus.Paid
                         ).size();
                         sendObject(count);
                     } catch (Exception e) {
                         sendObject(0);
+                    }
+                }
+                case GET_ALL_DOCUMENT_TYPES -> {
+                    try {
+                        var documentTypes = documentTypesManager.get(Objects::nonNull);
+                        sendObject(new ArrayList<>(documentTypes));
+                    } catch (Exception e) {
+                        sendObject(new ArrayList<>());
+                    }
+                }
+                case GET_ALL_PASSENGERS -> {
+                    try {
+                        var passengers = passengersManager.get(Objects::nonNull);
+                        sendObject(new ArrayList<>(passengers));
+                    } catch (Exception e) {
+                        sendObject(new ArrayList<>());
+                    }
+                }
+                case GET_ALL_TICKETS -> {
+                    try {
+                        var tickets = ticketsManager.get(Objects::nonNull);
+                        sendObject(new ArrayList<>(tickets));
+                    } catch (Exception e) {
+                        sendObject(new ArrayList<>());
                     }
                 }
             }
@@ -404,7 +430,6 @@ public class ClientProcessingThread extends Thread {
                     } catch (Exception e) {
                         sendObject(new ArrayList<>());
                     }
-
                 }
                 case GET_TIME_TABLE -> {
                     int startStationId = receiveObject();

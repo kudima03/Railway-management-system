@@ -15,6 +15,7 @@ module GUI {
     opens application.controllers.admin.trainsOperationsControllers to javafx.fxml;
     opens application.controllers.admin.stationsOperationsControllers to javafx.fxml;
     opens application.controllers.admin.routesOperationsControllers to javafx.fxml;
+    opens application.controllers.admin.statisticsOperationsControllers to javafx.fxml;
     opens application.controllers.driver to javafx.fxml;
     opens application.controllers.driver.timeTable to javafx.fxml;
     opens application.controllers.driver.profile to javafx.fxml;

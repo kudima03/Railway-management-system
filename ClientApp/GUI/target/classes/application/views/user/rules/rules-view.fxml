@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="700.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.user.rules.RulesController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="65.0" prefWidth="630.0" styleClass="light-blue-background" stylesheets="@../../../styles/styles.css">
+         <children>
+            <Label stylesheets="@../../../styles/styles.css" text="Правила проезда">
+               <styleClass>
+                  <String fx:value="font-size-19px" />
+                  <String fx:value="font-style" />
+               </styleClass></Label>
+         </children>
+      </HBox>
+      <ScrollPane prefHeight="530.0" prefWidth="700.0" styleClass="white-background" stylesheets="@../../../styles/styles.css">
+         <content>
+            <VBox fx:id="outputVbox" prefHeight="528.0" prefWidth="684.0" styleClass="white-background" stylesheets="@../../../styles/styles.css" />
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

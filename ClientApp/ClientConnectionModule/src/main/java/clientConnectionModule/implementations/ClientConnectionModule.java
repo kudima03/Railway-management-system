@@ -169,6 +169,12 @@ public class ClientConnectionModule implements AdminAccess, UserAccess, DriverAc
     }
 
     @Override
+    public List<Ticket> getAllTicketsAdmin() throws Exception {
+        sendObject(AdminCommand.GET_ALL_TICKETS);
+        return receiveObject();
+    }
+
+    @Override
     public List<Ticket> getAllTickets() throws Exception {
         sendObject(UserCommand.GET_ALL_TICKETS);
         return receiveObject();
@@ -342,6 +348,12 @@ public class ClientConnectionModule implements AdminAccess, UserAccess, DriverAc
     }
 
     @Override
+    public List<DocumentType> getAllDocumentTypesAdmin() throws Exception {
+        sendObject(AdminCommand.GET_ALL_DOCUMENT_TYPES);
+        return receiveObject();
+    }
+
+    @Override
     public void exit() throws Exception {
         sendObject(AdminCommand.EXIT);
     }
@@ -386,4 +398,10 @@ public class ClientConnectionModule implements AdminAccess, UserAccess, DriverAc
         return receiveObject();
     }
     /////////////////////////////////////////////////////////
+
+    @Override
+    public List<Passenger> getAllPassengersAdmin() throws Exception {
+        sendObject(AdminCommand.GET_ALL_PASSENGERS);
+        return receiveObject();
+    }
 }

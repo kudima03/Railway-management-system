@@ -51,13 +51,13 @@ public class PassengerInfoItemDeletableController {
     void onPassengerItemClicked(MouseEvent event) {
 
         Pair<AddOrEditPassengersController, VBox> pair = Application.viewLoader.getItem(Application.viewLoader.addOrEditPassengerView);
-        pair.getKey().setData(passenger);
         pair.getKey().setAccess(access);
         pair.getKey().setPrevMenu1(parentMenu);
         pair.getKey().setOutputAnchorPane(outputPane);
         outputPane.getChildren().clear();
         outputPane.getChildren().add(pair.getValue());
         pair.getKey().loadData();
+        pair.getKey().setData(passenger);
     }
 
     public void setAccess(UserAccess access) {

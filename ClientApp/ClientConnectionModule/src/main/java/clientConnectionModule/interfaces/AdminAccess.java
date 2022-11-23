@@ -50,10 +50,15 @@ public interface AdminAccess extends RegistrationAccess {
 
     List<RouteStation> getAllRouteStationsFromRoute(int routeId) throws Exception;
 
+    List<DocumentType> getAllDocumentTypesAdmin() throws Exception;
+
     void exit() throws Exception;
 
     boolean checkIfLoginExistsAdmin(String login) throws Exception;
 
     int getRouteTicketsAmountForLastMonth(int routeId) throws Exception;
 
+    List<Passenger> getAllPassengersAdmin() throws Exception;
+
+    List<Ticket> getAllTicketsAdmin() throws Exception;
 }
