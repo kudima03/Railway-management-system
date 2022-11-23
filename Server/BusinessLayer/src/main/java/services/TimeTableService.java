@@ -25,6 +25,7 @@ public class TimeTableService {
                     (var obj) -> obj.getRoute().getId() == departure.getRoute().getId()
                             && obj.getArrivalDateTime().after(departure.getDepartureDateTime())
             ).toList();
+            if (arrivalInfoList.size() == 0) continue;
             var arrivalInfo = arrivalInfoList.get(0);
             var pair = new Pair<RouteStation, RouteStation>();
             pair.setFirstValue(departure);
